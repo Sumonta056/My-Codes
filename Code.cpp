@@ -52,6 +52,7 @@ const int N = int(1e5 + 3);
 int main()
 { 
     fast;
+    
 
 
 }
