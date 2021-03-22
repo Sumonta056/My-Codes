@@ -57,4 +57,32 @@ int main()
 
 }
 
+/* 
 
+! prime numbers
+bool is_prime(int X)
+{
+	for(int i = 2; i*i < X; i++)
+    {
+		if(X % i == 0)
+        {
+			return false;
+		}
+	}
+	return true;
+}
+
+! GCD 
+int gcd(int a, int b)
+{
+	if(b == 0)
+    {
+		return a;
+	}
+	else
+    {
+		return gcd(b, a % b);
+	}
+}
+
+*/
