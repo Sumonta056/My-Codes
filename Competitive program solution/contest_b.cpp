@@ -53,7 +53,23 @@ int main()
 { 
     fast;
 
- 
+    int t ;
+    cin >> t;
+
+    while(t--)
+    {
+        ll k ;
+        cin >> k;
+
+        ll one = k - 1;
+
+       double ans ;
+       ans = (sqrt ( 8.00 * one + 1) - 1) / 2 ;
+
+       if( ans == (int)ans ) cout << "1" <<" ";
+       else cout << "0" << " ";
+
+    }
     
 
 

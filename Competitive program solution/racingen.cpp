@@ -52,8 +52,28 @@ const int N = int(1e5 + 3);
 int main()
 { 
     fast;
+    int t ;
+    cin >> t ;
 
- 
+    while(t--)
+    {
+        ll x , t , m ;
+        cin >> x >> t >> m ;
+
+        t = t * 60 ;
+        m = m * 60 ;
+
+        ll required_t ;
+        required_t = min( x , t) ;
+
+        t = t - min ( x , t );
+
+        required_t = required_t + ( 2 * t) ;
+
+        if( required_t <= m) cout << "YES"<<endl;
+        else cout << "NO" <<endl;
+
+    }
     
 
 

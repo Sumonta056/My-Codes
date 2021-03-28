@@ -53,8 +53,28 @@ int main()
 { 
     fast;
 
- 
+    int t ; 
+    cin >> t ;
+
+    while( t--)
+    {
+        int n , m ;
+        cin >> n >> m ;
+
+        set<int>s ;
+
+        for( int i = 0 ; i < n ; i++)
+        {
+            int x ;
+            cin >> x ;
+            s.insert(x);
+        }
+
+        if( s.size() >=  m) cout <<"No"<<endl;
+        else if(s.size() < m) cout <<"Yes"<<endl;
     
+    }
+ 
 
 
 }

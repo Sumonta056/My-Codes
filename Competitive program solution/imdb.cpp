@@ -53,7 +53,28 @@ int main()
 { 
     fast;
 
- 
+    int t ;
+    cin >>  t ;
+
+    while (t--)
+    {
+        ll n , x ;
+        cin >> n  >> x ;
+
+        ll ans  = 0 ;
+
+        for ( int i = 0 ; i < n ; i++)
+        {
+            ll s , r ;
+            cin>>s >> r;
+
+            if ( s <= x && r >ans)
+            ans = r ;
+        }
+
+        cout << ans <<endl;
+    }
+    
     
 
 

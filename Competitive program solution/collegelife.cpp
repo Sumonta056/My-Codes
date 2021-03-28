@@ -53,6 +53,46 @@ int main()
 { 
     fast;
 
+    int t ;
+    cin >> t ;
+    while ((t--))
+    {
+        ll n , m ;
+        cin >> n >> m;
+
+        vector< pair <int , int > > v(n+m) ; 
+
+        for( int i = 0 ; i < n ; i++)
+        {
+            cin >> v[i].first ;
+
+            v[i].second = 1;
+        }
+
+        for( int i = n ; i < n+m ; i++)
+        {
+            cin >> v[i].first ;
+
+            v[i].second = 2;
+        }
+
+        ll s = 0 ;
+        sort ( v.begin() , v.end());
+
+     
+        for(int i = 0 ; i < n+m ; i++)
+        {
+            if( i == 0 && v[i].second == 2)  s++;
+
+            if(i != 0 && v[i].second != v[i-1].second) s++;
+            
+
+        }
+
+        cout << s <<endl;
+        
+    }
+    
  
     
 

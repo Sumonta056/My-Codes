@@ -53,7 +53,32 @@ int main()
 { 
     fast;
 
- 
+    int t ;
+    cin >>  t ;
+
+    while (t--)
+    {
+        int n ;
+        cin >> n  ;
+
+        ll ans = 0 ;
+        ll check = 0 ;
+
+        for( int i = 0  ; i < n ; i++)
+        {
+            ll a ;
+            cin >> a;
+
+            ans = ans + a ;
+
+            if( a == 2 ) check = 1 ;
+        }
+
+        if( ans % 2 == 0) cout << 0 <<endl;
+        else if ( check == 1 ) cout << 1 << endl;
+        else cout <<-1<<endl; 
+    }
+    
     
 
 

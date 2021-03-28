@@ -53,7 +53,15 @@ int main()
 { 
     fast;
 
- 
+    int r , o , c ;
+    cin >> r  >> o  >> c;
+
+    int ans = ( 20 - o) * 36 ;
+
+    c = c + ans ;
+
+    if( c > r ) cout << "YES" ;
+    else cout << "NO" ;
     
 
 
