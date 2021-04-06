@@ -51,7 +51,43 @@ int main()
 {
     fast;
 
+    int t;
+    cin >> t;
 
-    
+    while (t--)
+    {
+        ll n, k;
+        cin >> n >> k;
 
+        string a;
+        cin >> a;
+
+        ll count = 0;
+        ll cur_count = 1;
+        char ans = '*';
+
+        for (ll i = 0; i < n; i++)
+        {
+            if (a[i] == ans)
+            {
+
+                if (i < n - 1 && a[i] == a[i + 1])
+                    cur_count++;
+
+                else
+                {
+                    if (cur_count > count)
+                    {
+                        count = cur_count;
+                    }
+                    cur_count = 1;
+                }
+            }
+        }
+
+        if (count >= k)
+            cout << "YES" << endl;
+        else
+            cout << "NO" << endl;
+    }
 }
