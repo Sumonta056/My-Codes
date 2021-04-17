@@ -31,8 +31,8 @@ using namespace std;
 #define ub upper_bound
 #define sz(x) (int)x.size()
 #define endl '\n'
-#define Y    cout << "YES\n"
-#define No    cout << "NO\n"
+#define Y cout << "YES\n"
+#define No cout << "NO\n"
 
 #define F(i, s, e) for (ll i = s; i < e; ++i)
 #define rep(i, a, b) for (int i = a; i < b; i++)
@@ -49,9 +49,30 @@ using namespace std;
 #define NINF numeric_limits<ll>::min();
 const int N = int(1e5 + 3);
 
+ll power(ll a, ll b)
+{
+    if (b == 0)
+        return 1;
+    else
+    {
+        ll r = power(a, b / 2);
+        if (b % 2 == 0)
+            return (r * r) % mod;
+        else
+        {
+            ll x = (r * r) % mod;
+            return (a * x) % mod;
+        }
+    }
+}
+
 int main()
 {
     fast;
 
-
+    ll n, p;
+    cin >> n >> p;
+    ll answer = (p - 1) * power(p - 2, n - 1);
+    answer %= mod;
+    cout << answer << endl;
 }

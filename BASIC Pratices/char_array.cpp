@@ -31,8 +31,6 @@ using namespace std;
 #define ub upper_bound
 #define sz(x) (int)x.size()
 #define endl '\n'
-#define Y    cout << "YES\n"
-#define No    cout << "NO\n"
 
 #define F(i, s, e) for (ll i = s; i < e; ++i)
 #define rep(i, a, b) for (int i = a; i < b; i++)
@@ -50,8 +48,28 @@ using namespace std;
 const int N = int(1e5 + 3);
 
 int main()
-{
+{ 
     fast;
 
+    char a[100] ;
+
+   //* cin >> a ;
+   //*  cout << a << endl;
+
+    //? char b[100] ;
+
+    //? cin.getline(b,100) ;
+
+    //? cout << b << endl;
+
+    char c[100];
+    cin.getline(c, 100 , '.') ;
+    // ! stop proccessing when get . character
+
+    cout << c ;
+    
+
+
+    
 
 }

@@ -31,8 +31,8 @@ using namespace std;
 #define ub upper_bound
 #define sz(x) (int)x.size()
 #define endl '\n'
-#define Y    cout << "YES\n"
-#define No    cout << "NO\n"
+#define Y cout << "YES\n"
+#define No cout << "NO\n"
 
 #define F(i, s, e) for (ll i = s; i < e; ++i)
 #define rep(i, a, b) for (int i = a; i < b; i++)
@@ -53,5 +53,16 @@ int main()
 {
     fast;
 
-
+    ll a, b;
+    cin >> a >> b;
+    ll ans = b;
+    while (1)
+    {
+        if ((a + ans - 1) / ans < b / ans)
+        {
+            cout << ans << endl;
+            break;
+        }
+        ans--;
+    }
 }

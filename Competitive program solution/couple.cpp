@@ -31,8 +31,6 @@ using namespace std;
 #define ub upper_bound
 #define sz(x) (int)x.size()
 #define endl '\n'
-#define Y    cout << "YES\n"
-#define No    cout << "NO\n"
 
 #define F(i, s, e) for (ll i = s; i < e; ++i)
 #define rep(i, a, b) for (int i = a; i < b; i++)
@@ -53,5 +51,38 @@ int main()
 {
     fast;
 
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        ll n;
+        cin >> n;
 
+        vector<ll> a(n);
+        vector<ll> b(n);
+
+        for (ll i = 0; i < n; i++)
+        {
+            cin >> a[i];
+        }
+
+        for (ll i = 0; i < n; i++)
+        {
+            cin >> b[i];
+        }
+
+        sort(a.begin(), a.end());
+        sort(b.begin(), b.end());
+        ll ans = 0;
+
+        for (ll i = 0; i < n; i++)
+        {
+            ll sum = 0;
+            sum = a[i] + b[n - i - 1];
+
+            ans = max(sum, ans);
+        }
+
+        cout << ans << endl;
+    }
 }

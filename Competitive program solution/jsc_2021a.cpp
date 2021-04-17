@@ -53,5 +53,14 @@ int main()
 {
     fast;
 
+    double x , y , z ;
+    cin >> x >> y >> z ;
+
+    double ans = ceil ( (y*z) / x ) ;
+
+    cout << ans - 1 << endl;
+
+
+    
 
 }

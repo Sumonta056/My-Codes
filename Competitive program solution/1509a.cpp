@@ -31,8 +31,6 @@ using namespace std;
 #define ub upper_bound
 #define sz(x) (int)x.size()
 #define endl '\n'
-#define Y    cout << "YES\n"
-#define No    cout << "NO\n"
 
 #define F(i, s, e) for (ll i = s; i < e; ++i)
 #define rep(i, a, b) for (int i = a; i < b; i++)
@@ -53,5 +51,36 @@ int main()
 {
     fast;
 
+    int t;
+    cin >> t;
 
+    while (t--)
+    {
+        int n;
+        cin >> n;
+
+        vector<int> odd;
+        vector<int> even;
+
+        for (int i = 0; i < n; i++)
+        {
+            int x;
+            cin >> x;
+
+            if (x % 2 != 0)
+                odd.push_back(x);
+            else
+                even.push_back(x);
+        }
+
+        vector<int> ans = odd;
+        ans.insert(ans.end(), even.begin(), even.end());
+
+        for (auto i = ans.begin(); i != ans.end(); i++)
+        {
+            cout << *i << " ";
+        }
+
+        cout << endl;
+    }
 }

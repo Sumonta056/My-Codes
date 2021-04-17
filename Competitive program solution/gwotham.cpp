@@ -31,8 +31,6 @@ using namespace std;
 #define ub upper_bound
 #define sz(x) (int)x.size()
 #define endl '\n'
-#define Y    cout << "YES\n"
-#define No    cout << "NO\n"
 
 #define F(i, s, e) for (ll i = s; i < e; ++i)
 #define rep(i, a, b) for (int i = a; i < b; i++)
@@ -52,6 +50,45 @@ const int N = int(1e5 + 3);
 int main()
 {
     fast;
-
-
+    ll i, j, k, n, t, m;
+    cin >> n;
+    ll a[n];
+    for (i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+    ll link[n];
+    for (i = 0; i < n; i++)
+    {
+        link[i] = i + 1;
+    }
+    link[n - 1] = -1;
+    cin >> t;
+    while (t--)
+    {
+        ll pos;
+        cin >> pos >> k;
+        pos--;
+        vector<ll> v;
+        ll start = pos, ans = 0;
+        while (start != -1 && a[start] <= k)
+        {
+            ans += (start - pos) * a[start];
+            k -= a[start];
+            a[start] = 0;
+            v.pb(start);
+            start = link[start];
+        }
+        if (start != -1 && k > 0)
+        {
+            a[start] = a[start] - k;
+            ans += k * (start - pos);
+        }
+        for (i = 0; i < v.size(); i++)
+        {
+            link[v[i]] = start;
+        }
+        cout << ans << endl;
+    }
+    return 0;
 }
