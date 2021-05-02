@@ -26,13 +26,13 @@ using namespace std;
 #define mii map<pii, int>
 #define all(a) (a).begin(), (a).end()
 #define f first
-#define se second
+#define s second
 #define lb lower_bound
 #define ub upper_bound
 #define sz(x) (int)x.size()
 #define endl '\n'
-#define Y    cout << "YES\n"
-#define No    cout << "NO\n"
+#define Y cout << "YES\n"
+#define No cout << "NO\n"
 
 #define F(i, s, e) for (ll i = s; i < e; ++i)
 #define rep(i, a, b) for (int i = a; i < b; i++)
@@ -49,9 +49,37 @@ using namespace std;
 #define NINF numeric_limits<ll>::min();
 const int N = int(1e5 + 3);
 
+bool solve()
+{
+    string s;
+    cin >> s;
+    vector<int> d(3);
+    int x = s[0] - 'A';
+    int y = s.back() - 'A';
+    if (x == y)
+        return false;
+    d[x] = 1;
+    d[y] = -1;
+    if (count(s.begin(), s.end(), 'A' + x) == s.length() / 2)
+        d[3 ^ x ^ y] = -1;
+    else
+        d[3 ^ x ^ y] = 1;
+    int bal = 0;
+    for (char c : s)
+    {
+        bal += d[c - 'A'];
+        if (bal < 0)
+            return false;
+    }
+    return bal == 0;
+}
+
 int main()
 {
-    fast;
-
-
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        cout << (solve() ? "YES\n" : "NO\n");
+    }
 }

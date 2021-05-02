@@ -26,13 +26,13 @@ using namespace std;
 #define mii map<pii, int>
 #define all(a) (a).begin(), (a).end()
 #define f first
-#define se second
+#define s second
 #define lb lower_bound
 #define ub upper_bound
 #define sz(x) (int)x.size()
 #define endl '\n'
-#define Y    cout << "YES\n"
-#define No    cout << "NO\n"
+#define Y cout << "YES\n"
+#define No cout << "NO\n"
 
 #define F(i, s, e) for (ll i = s; i < e; ++i)
 #define rep(i, a, b) for (int i = a; i < b; i++)
@@ -48,10 +48,23 @@ using namespace std;
 #define INF numeric_limits<ll>::max();
 #define NINF numeric_limits<ll>::min();
 const int N = int(1e5 + 3);
-
 int main()
 {
-    fast;
-
-
+    int n;
+    char c;
+    long count = 0, numberofvalleys = 0;
+    cin >> n;
+    while (n--)
+    {
+        cin >> c;
+        long help = count;
+        if (c == 'U')
+            count++;
+        else if (c == 'D')
+            count--;
+        if (help < 0 && count == 0)
+            numberofvalleys++;
+    }
+    cout << numberofvalleys << endl;
+    return 0;
 }

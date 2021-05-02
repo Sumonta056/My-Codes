@@ -26,7 +26,7 @@ using namespace std;
 #define mii map<pii, int>
 #define all(a) (a).begin(), (a).end()
 #define f first
-#define se second
+#define s second
 #define lb lower_bound
 #define ub upper_bound
 #define sz(x) (int)x.size()
@@ -52,6 +52,30 @@ const int N = int(1e5 + 3);
 int main()
 {
     fast;
+    int t  ;
+    cin >> t ;
+    
+    while( t-- )
+    {
+        int n ;
+        cin >> n ;
+        
+        int sq = 0 ;
+
+        for ( int i = 0 ; i < n ; i++)
+        {
+            int x ;
+            cin >> x ;
+
+            int root = sqrt(x) ;
+
+            if( root * root ==  x ) sq++;
+
+        }
+
+        if( sq == n)  cout << "NO" <<endl;
+        else cout << "YES" <<endl ;
+    }
 
 
 }

@@ -26,7 +26,7 @@ using namespace std;
 #define mii map<pii, int>
 #define all(a) (a).begin(), (a).end()
 #define f first
-#define se second
+#define s second
 #define lb lower_bound
 #define ub upper_bound
 #define sz(x) (int)x.size()
@@ -52,6 +52,44 @@ const int N = int(1e5 + 3);
 int main()
 {
     fast;
+
+    int n ;
+    cin >> n ;
+
+    int count = 0 ;
+
+    while( n > 0)
+    {
+        count = count + (n&1) ;
+
+        n = n >> 1 ;
+    }
+
+    cout << count << endl;
+
+    /*
+    * how it works  5 = 101
+    *  101 & 1 = 1 
+    * count = 0 + 1  = 1 ;
+    * left shifting n = 010 = 2 ;
+    * 2 > 0
+    * 010 & 1 = 0
+    * count = 1 + 0 = 1;
+    * left shiting n = 001 = 1 ;
+    * 1 > 0 
+    * 001 & 1 = 1 
+    * count =  1+ 1  = 2
+    * left shifting n = 0
+    * n !> 0 
+    * break
+   
+    */
+
+
+
+
+
+
 
 
 }

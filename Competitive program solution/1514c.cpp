@@ -26,13 +26,13 @@ using namespace std;
 #define mii map<pii, int>
 #define all(a) (a).begin(), (a).end()
 #define f first
-#define se second
+#define s second
 #define lb lower_bound
 #define ub upper_bound
 #define sz(x) (int)x.size()
 #define endl '\n'
-#define Y    cout << "YES\n"
-#define No    cout << "NO\n"
+#define Y cout << "YES\n"
+#define No cout << "NO\n"
 
 #define F(i, s, e) for (ll i = s; i < e; ++i)
 #define rep(i, a, b) for (int i = a; i < b; i++)
@@ -49,9 +49,26 @@ using namespace std;
 #define NINF numeric_limits<ll>::min();
 const int N = int(1e5 + 3);
 
+bool ok[100005];
 int main()
 {
-    fast;
-
-
+    int n;
+    scanf("%d", &n);
+    long long prod = 1;
+    for (int i = 1; i < n; i++)
+    {
+        if (__gcd(n, i) == 1)
+        {
+            ok[i] = 1;
+            prod = (prod * i) % n;
+        }
+    }
+    if (prod != 1)
+        ok[prod] = 0;
+    printf("%d\n", count(ok + 1, ok + n, 1));
+    for (int i = 1; i < n; i++)
+    {
+        if (ok[i])
+            printf("%d ", i);
+    }
 }

@@ -26,7 +26,7 @@ using namespace std;
 #define mii map<pii, int>
 #define all(a) (a).begin(), (a).end()
 #define f first
-#define se second
+#define s second
 #define lb lower_bound
 #define ub upper_bound
 #define sz(x) (int)x.size()
@@ -52,6 +52,45 @@ const int N = int(1e5 + 3);
 int main()
 {
     fast;
+
+    int t ;
+    cin >> t ;
+
+    while(t--)
+    {
+        int n , m ;
+        cin >> n >> m ;
+        int x , y ;
+        cin >> x >> y ;
+
+        for( int i = 0 ; i <  n  ;i++)
+        {
+            int solve = 0 ; 
+            int psolve = 0 ;
+            for( int j = 0  ; j < m ; j++)
+            {
+                char c ;
+                cin >> c ;
+
+                if(c == 'F') solve++ ;
+                else if( c == 'P') psolve++;
+
+            }
+
+            if( solve >= x) cout << 1 ;
+            else if( solve == x-1 && psolve >= y) cout << 1 ;
+            else cout << 0 ;
+
+
+        }
+        cout << endl;
+
+
+
+
+
+
+    }
 
 
 }

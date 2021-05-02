@@ -26,13 +26,13 @@ using namespace std;
 #define mii map<pii, int>
 #define all(a) (a).begin(), (a).end()
 #define f first
-#define se second
+#define s second
 #define lb lower_bound
 #define ub upper_bound
 #define sz(x) (int)x.size()
 #define endl '\n'
-#define Y    cout << "YES\n"
-#define No    cout << "NO\n"
+#define Y cout << "YES\n"
+#define No cout << "NO\n"
 
 #define F(i, s, e) for (ll i = s; i < e; ++i)
 #define rep(i, a, b) for (int i = a; i < b; i++)
@@ -49,9 +49,23 @@ using namespace std;
 #define NINF numeric_limits<ll>::min();
 const int N = int(1e5 + 3);
 
+string a[10] = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+string b[10] = {"ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
+string c[10] = {"tmp", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
+
 int main()
 {
-    fast;
-
-
+    int n;
+    cin >> n;
+    if (n < 10)
+        cout << a[n];
+    else if (n < 20)
+        cout << b[n % 10];
+    else
+    {
+        cout << c[n / 10];
+        if (n % 10)
+            cout << '-' << a[n % 10];
+    }
+    cout << endl;
 }

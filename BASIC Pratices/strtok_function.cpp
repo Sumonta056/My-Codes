@@ -26,7 +26,7 @@ using namespace std;
 #define mii map<pii, int>
 #define all(a) (a).begin(), (a).end()
 #define f first
-#define se second
+#define s second
 #define lb lower_bound
 #define ub upper_bound
 #define sz(x) (int)x.size()
@@ -53,5 +53,28 @@ int main()
 {
     fast;
 
+    char str[] = "HI I am KANJi kali" ;
+
+    char *ptr ;
+
+    ptr = strtok(str ," ") ;
+    cout << ptr << endl;
+
+   // * ptr = strtok(str ," ") ;
+   // * cout << ptr << endl;
+
+    /* 
+    ? ptr = strtok(NULL ," ") ;
+    ? cout << ptr << endl;
+
+    ptr = strtok(NULL ," ") ;
+    cout << ptr << endl;
+    */
+
+   while(ptr != NULL)
+   {
+       ptr = strtok(NULL ," ") ;
+       cout << ptr << endl;
+   }
 
 }

@@ -53,5 +53,22 @@ int main()
 {
     fast;
 
+    int n , k ;
+    cin >> n >> k ;
+
+    int maxi = 0;
+
+    for( int i = 0 ; i < n ; i++)
+    {
+        int x ;
+        cin >> x ;
+
+        maxi = max( maxi , x );
+    }
+
+    if( k >= maxi) cout<<0<<endl;
+    else cout << maxi - k <<endl;
+
+
 
 }

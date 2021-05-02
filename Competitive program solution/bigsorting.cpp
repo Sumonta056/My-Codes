@@ -26,13 +26,13 @@ using namespace std;
 #define mii map<pii, int>
 #define all(a) (a).begin(), (a).end()
 #define f first
-#define se second
+#define s second
 #define lb lower_bound
 #define ub upper_bound
 #define sz(x) (int)x.size()
 #define endl '\n'
-#define Y    cout << "YES\n"
-#define No    cout << "NO\n"
+#define Y cout << "YES\n"
+#define No cout << "NO\n"
 
 #define F(i, s, e) for (ll i = s; i < e; ++i)
 #define rep(i, a, b) for (int i = a; i < b; i++)
@@ -49,9 +49,24 @@ using namespace std;
 #define NINF numeric_limits<ll>::min();
 const int N = int(1e5 + 3);
 
+bool check(string a, string b)
+{
+    return a.length() == b.length() ? a > b : a.length() > b.length();
+}
 int main()
 {
     fast;
+    int n;
+    cin >> n;
+    vector<string> arr;
+    for (int i = 0; i < n; i++)
+    {
+        string a;
+        cin >> a;
+        arr.push_back(a);
+    }
 
-
+    sort(arr.begin(), arr.end(), check);
+    for (int i = arr.size() - 1; i >= 0; i--)
+        cout << arr[i] << endl;
 }

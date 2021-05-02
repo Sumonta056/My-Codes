@@ -52,6 +52,21 @@ const int N = int(1e5 + 3);
 int main()
 {
     fast;
+    int q ;
+    cin >> q ;
+
+    while(q--)
+    {
+        int x , y , z ;
+        cin >> x >> y >> z ;
+
+        int a = abs(x - z) ;
+        int b = abs(y - z);
+
+        if( a == b) cout << "Mouse C" << endl;
+        else if( a > b) cout << "Cat B" << endl;
+        else cout <<"Cat A"<<endl;
+    }
 
 
 }

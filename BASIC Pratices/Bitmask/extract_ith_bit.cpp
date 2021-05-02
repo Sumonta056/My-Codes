@@ -26,7 +26,7 @@ using namespace std;
 #define mii map<pii, int>
 #define all(a) (a).begin(), (a).end()
 #define f first
-#define se second
+#define s second
 #define lb lower_bound
 #define ub upper_bound
 #define sz(x) (int)x.size()
@@ -52,6 +52,26 @@ const int N = int(1e5 + 3);
 int main()
 {
     fast;
+
+    int n = 13 ;
+    int i = 2 ;
+
+    // * n = 1101
+    // * n = 1234
+    // * we have to get the  2nd bit
+
+    int ans = n & ( 1<<i ) ;
+
+    cout << ans ;
+
+    /*
+    * n == 1101
+    * 1 << i =  1 << 2 = 0100
+    * 1101 & 0100 = 0100 ;
+    */
+
+
+
 
 
 }

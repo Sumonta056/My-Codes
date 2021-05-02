@@ -26,13 +26,13 @@ using namespace std;
 #define mii map<pii, int>
 #define all(a) (a).begin(), (a).end()
 #define f first
-#define se second
+#define s second
 #define lb lower_bound
 #define ub upper_bound
 #define sz(x) (int)x.size()
 #define endl '\n'
-#define Y    cout << "YES\n"
-#define No    cout << "NO\n"
+#define Y cout << "YES\n"
+#define No cout << "NO\n"
 
 #define F(i, s, e) for (ll i = s; i < e; ++i)
 #define rep(i, a, b) for (int i = a; i < b; i++)
@@ -49,9 +49,40 @@ using namespace std;
 #define NINF numeric_limits<ll>::min();
 const int N = int(1e5 + 3);
 
+void insertionSort(int arr_size, int *arr)
+{
+
+    int small = 0;
+    for (int i = 0; i < arr_size - 1; i++)
+    {
+
+        if (arr[i] > arr[i + 1])
+        {
+            small = arr[i + 1];
+            int j = i;
+            while (arr[j] > small)
+            {
+                arr[j + 1] = arr[j];
+                j--;
+            }
+            arr[j + 1] = small;
+        }
+        for (int k = 0; k < arr_size; k++)
+            cout << arr[k] << " ";
+        cout << endl;
+    }
+}
 int main()
 {
-    fast;
 
-
+    int n;
+    cin >> n;
+    //scanf("%d", &n);
+    int main_arr[n], a;
+    for (a = 0; a < n; a++)
+    {
+        cin >> main_arr[a];
+    }
+    insertionSort(n, main_arr);
+    return 0;
 }

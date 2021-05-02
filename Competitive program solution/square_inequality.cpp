@@ -26,7 +26,7 @@ using namespace std;
 #define mii map<pii, int>
 #define all(a) (a).begin(), (a).end()
 #define f first
-#define se second
+#define s second
 #define lb lower_bound
 #define ub upper_bound
 #define sz(x) (int)x.size()
@@ -52,6 +52,16 @@ const int N = int(1e5 + 3);
 int main()
 {
     fast;
+
+    int a , b ,c ;
+    cin >> a >> b >> c ;
+    
+    a = a*a ;
+    b = b*b ;
+    c = c*c ;
+
+    if( a+b < c ) cout << "Yes" <<endl;
+    else cout << "No" <<endl;
 
 
 }

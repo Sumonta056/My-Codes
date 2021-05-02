@@ -26,7 +26,7 @@ using namespace std;
 #define mii map<pii, int>
 #define all(a) (a).begin(), (a).end()
 #define f first
-#define se second
+#define s second
 #define lb lower_bound
 #define ub upper_bound
 #define sz(x) (int)x.size()
@@ -52,6 +52,28 @@ const int N = int(1e5 + 3);
 int main()
 {
     fast;
+    int t ;
+    cin >>t ;
+    while ( t--)
+    {
+        int n, m ;
+        cin >> n >> m ;
+
+        int x , y ;
+        cin >> x >> y ;
+
+        int a , b ;
+        cin >> a >> b ;
+
+        int theif = n - x + m - y ;
+
+        int police = n - a + m - b - min(n-a , m-b);
+
+        if ( theif <= police ) Y;
+        else No;
+        
+    }
+
 
 
 }

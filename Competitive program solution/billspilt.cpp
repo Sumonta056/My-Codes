@@ -26,7 +26,7 @@ using namespace std;
 #define mii map<pii, int>
 #define all(a) (a).begin(), (a).end()
 #define f first
-#define se second
+#define s second
 #define lb lower_bound
 #define ub upper_bound
 #define sz(x) (int)x.size()
@@ -52,6 +52,29 @@ const int N = int(1e5 + 3);
 int main()
 {
     fast;
+    int n , k ;
+    cin >> n >> k ;
+
+    int arr[n] ;
+
+    int sum = 0 ; 
+
+    for( int i = 0 ;  i<n ; i++)
+    {
+        cin >> arr[i] ;
+
+        if( i != k) sum = sum + arr[i] ;
+    }
+
+    sum = sum / 2 ;
+
+    int b  ;
+    cin >> b ;
+
+    if ( b > sum) cout << b - sum ;
+    else cout << "Bon Appetit"<<endl;
+
+
 
 
 }

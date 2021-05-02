@@ -26,7 +26,7 @@ using namespace std;
 #define mii map<pii, int>
 #define all(a) (a).begin(), (a).end()
 #define f first
-#define se second
+#define s second
 #define lb lower_bound
 #define ub upper_bound
 #define sz(x) (int)x.size()
@@ -52,6 +52,30 @@ const int N = int(1e5 + 3);
 int main()
 {
     fast;
+
+    int a , b ;
+    a = 13 ; // * 1101
+
+    // * question
+    // * remove the last 1 with 0 print the output
+
+    b = a&( a-1) ;
+    cout <<b<<endl;
+
+    // * a = 1101
+    // * a-1 =12 = 1100
+    // * b = 1100
+
+    
+    
+
+    
+
+  
+
+
+
+
 
 
 }

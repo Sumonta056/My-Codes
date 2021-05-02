@@ -26,7 +26,7 @@ using namespace std;
 #define mii map<pii, int>
 #define all(a) (a).begin(), (a).end()
 #define f first
-#define se second
+#define s second
 #define lb lower_bound
 #define ub upper_bound
 #define sz(x) (int)x.size()
@@ -53,5 +53,27 @@ int main()
 {
     fast;
 
+    int a , b , c ;
+
+    a  = 0  ; b = 0 ; c = (a&b) ;
+    cout << a << " " << b << " " << c <<endl;
+
+    a  = 0  ; b = 1 ; c = (a&b) ;
+    cout << a << " " << b << " " << c <<endl;
+
+    a  = 1  ; b = 0 ; c = (a&b) ;
+    cout << a << " " << b << " " << c <<endl;
+
+    a  = 1  ; b = 1 ; c = (a&b) ;
+    cout << a << " " << b << " " << c <<endl;
+
+    // * it like multipication of two bits
+
+    a = 5 ; //* 101
+    b = 7 ; //* 111
+
+    c =  a & b ; // * 1 0 1
+    cout << a << " " << b << " " << c <<endl;
+    
 
 }

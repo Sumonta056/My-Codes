@@ -26,13 +26,13 @@ using namespace std;
 #define mii map<pii, int>
 #define all(a) (a).begin(), (a).end()
 #define f first
-#define se second
+#define s second
 #define lb lower_bound
 #define ub upper_bound
 #define sz(x) (int)x.size()
 #define endl '\n'
-#define Y    cout << "YES\n"
-#define No    cout << "NO\n"
+#define Y cout << "YES\n"
+#define No cout << "NO\n"
 
 #define F(i, s, e) for (ll i = s; i < e; ++i)
 #define rep(i, a, b) for (int i = a; i < b; i++)
@@ -51,7 +51,29 @@ const int N = int(1e5 + 3);
 
 int main()
 {
-    fast;
+    int n ;
+    cin >> n;
+    vector<int> arr(n);
 
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
 
+    for (int i = 1; i < n; i++)
+    {
+        int j = i;
+        while (j > 0 && arr[j] < arr[j - 1])
+        {
+            int tmp = arr[j - 1];
+            arr[j - 1] = arr[j];
+            arr[j] = tmp;
+            j--;
+        }
+    }
+
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+
+    cout << endl;
+    
+    
 }

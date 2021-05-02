@@ -52,6 +52,15 @@ const int N = int(1e5 + 3);
 int main()
 {
     fast;
+    int t ;
+    cin >> t ;
+    while(t--)
+    {
+        int n , m ;
+        cin >> n >> m ;
+
+        cout << (n-1)*(m-1) << endl;
+    }
 
 
 }

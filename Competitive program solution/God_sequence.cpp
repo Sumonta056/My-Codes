@@ -26,13 +26,13 @@ using namespace std;
 #define mii map<pii, int>
 #define all(a) (a).begin(), (a).end()
 #define f first
-#define se second
+#define s second
 #define lb lower_bound
 #define ub upper_bound
 #define sz(x) (int)x.size()
 #define endl '\n'
-#define Y    cout << "YES\n"
-#define No    cout << "NO\n"
+#define Y cout << "YES\n"
+#define No cout << "NO\n"
 
 #define F(i, s, e) for (ll i = s; i < e; ++i)
 #define rep(i, a, b) for (int i = a; i < b; i++)
@@ -53,5 +53,83 @@ int main()
 {
     fast;
 
+    ll a, b;
+    cin >> a >> b;
 
+    vector<ll> arr;
+
+    if (a == b)
+    {
+        ll t = 1;
+        for (ll i = 1; i <= a; i++)
+        {
+            arr.push_back(t);
+            arr.push_back((-1) * t);
+
+            t++;
+        }
+    }
+
+    else if (a > b)
+    {
+        ll sum = 0;
+        ll t = 1;
+
+        for (ll i = 1; i <= a; i++)
+        {
+            arr.push_back(t);
+            sum = sum + t;
+
+            t++;
+        }
+
+        if (b == 1)
+            arr.push_back((-1) * sum);
+        else
+        {
+            t = -1;
+            for (ll i = 1; i < b; i++)
+            {
+                arr.push_back(t);
+                sum = sum + t;
+
+                t--;
+            }
+            arr.push_back((-1) * sum);
+        }
+    }
+
+    else
+    {
+        ll sum = 0;
+        ll t = -1;
+
+        for (ll i = 1; i <= b; i++)
+        {
+            arr.push_back(t);
+            sum = sum + t;
+
+            t--;
+        }
+
+        if (a == 1)
+            arr.push_back((-1) * sum);
+        else
+        {
+            t = 1;
+            for (ll i = 1; i < a; i++)
+            {
+                arr.push_back(t);
+                sum = sum + t;
+
+                t++;
+            }
+            arr.push_back((-1)* sum);
+        }
+    }
+
+    for (auto it = arr.begin(); it != arr.end(); it++)
+    {
+        cout << *it << " ";
+    }
 }

@@ -26,7 +26,7 @@ using namespace std;
 #define mii map<pii, int>
 #define all(a) (a).begin(), (a).end()
 #define f first
-#define se second
+#define s second
 #define lb lower_bound
 #define ub upper_bound
 #define sz(x) (int)x.size()
@@ -53,5 +53,28 @@ int main()
 {
     fast;
 
+    int a , b ;
+
+    // ! NOTE :  a >> n  = a / pow(2,n)
+
+    a = 5 ; // * 00000101
+
+    b = a >> 1 ;  // * 00001010
+    // ? b = 5 / pow(2,1)  = 2 (int value)
+
+    cout << b << endl ;
+
+    b  = a >> 2 ;  // * 00010100 ;
+    // ? b = 5 / pow(2,2)  = 1
+
+    cout << b << endl ;
+
+    b  = a >> 3 ;  // * 0001  0100 ;
+    // ? b = 5 / pow(2,3) = 0
+    
+    cout << b << endl ;
+
+    
+    
 
 }

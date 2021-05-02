@@ -31,8 +31,8 @@ using namespace std;
 #define ub upper_bound
 #define sz(x) (int)x.size()
 #define endl '\n'
-#define Y    cout << "YES\n"
-#define No    cout << "NO\n"
+#define Y cout << "YES\n"
+#define No cout << "NO\n"
 
 #define F(i, s, e) for (ll i = s; i < e; ++i)
 #define rep(i, a, b) for (int i = a; i < b; i++)
@@ -53,5 +53,23 @@ int main()
 {
     fast;
 
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        string s;
+        cin >> s;
 
+        ll n = s.length();
+
+        ll ans = 0;
+
+        for (ll i = 0; i < n; i++)
+        {
+            if (s[i] == '4')
+                ans++;
+        }
+
+        cout << ans << endl;
+    }
 }

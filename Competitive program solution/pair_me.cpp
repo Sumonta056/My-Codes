@@ -52,6 +52,18 @@ const int N = int(1e5 + 3);
 int main()
 {
     fast;
+    int t ;
+    cin >> t ;
+    while(t--)
+    {
+        int x , y , z ;
+        cin >> x>>y>>z ;
+
+        if( x + y == z) Y;
+        else if( y+z == x) Y;
+        else if(x+z == y) Y;
+        else No;
+    }
 
 
 }

@@ -31,8 +31,8 @@ using namespace std;
 #define ub upper_bound
 #define sz(x) (int)x.size()
 #define endl '\n'
-#define Y    cout << "YES\n"
-#define No    cout << "NO\n"
+#define Y cout << "YES\n"
+#define No cout << "NO\n"
 
 #define F(i, s, e) for (ll i = s; i < e; ++i)
 #define rep(i, a, b) for (int i = a; i < b; i++)
@@ -49,9 +49,27 @@ using namespace std;
 #define NINF numeric_limits<ll>::min();
 const int N = int(1e5 + 3);
 
+int arr[6] = {100, 50, 10, 5, 2, 1};
+
 int main()
 {
     fast;
 
-
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int n;
+        cin >> n;
+        int count = 0;
+        for (int i = 0; i < 6; i++)
+        {
+            count = n / arr[i] + count;
+            n = n % arr[i];
+            
+            if (n == 0)
+                break;
+        }
+        cout << count << "\n";
+    }
 }
