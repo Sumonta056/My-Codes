@@ -52,6 +52,38 @@ const int N = int(1e5 + 3);
 int main()
 {
     fast;
+    int n ;
+    cin >>  n ;
+
+    int arr[n];
+
+    for ( int i = 0 ; i < n ;i++)
+    {
+        cin >> arr[i];
+    }
+
+    sort( arr , arr+n) ;
+
+    int k = 1 ;
+
+    int check = 0 ;
+
+    for( int i = 0 ; i < n ; i++)
+    {
+        if( arr[i] != k )
+        {
+            check = 1 ;
+            break ;
+        }
+
+        k++;
+
+    }
+
+    if( check == 1) cout << "No" << endl;
+    else cout <<"Yes"  <<endl;
+
+
 
 
 }

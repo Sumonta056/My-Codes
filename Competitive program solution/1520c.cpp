@@ -58,20 +58,74 @@ int main()
 
     while (t--)
     {
-        ll a, b;
-        cin >> a >> b;
+        int n;
+        cin >> n;
 
-        if (b == 1)
-            No;
+        if (n == 2)
+        {
+            cout << -1 << "\n";
+       
+        }
 
         else
         {
-            Y;
-            ll x = a;
-            ll y = a * b;
-            ll z = a * (b + 1);
+            int a[n][n];
 
-            cout << x <<" "<< y <<" "<< z << endl;
+
+            if (n % 2 == 1)
+            {
+                int k = 1;
+                int x = 0;
+                while (k <= (n * n))
+                {
+                    int i = x / n;
+                    i = i % n;
+                    int j = x % n;
+                    a[i][j] = k;
+                    k++;
+                    x += 2;
+                }
+            }
+
+            else
+            {
+                int k = 1;
+                for (int i = 0; i < n; i++)
+                {
+                    if (i % 2 == 0)
+                    {
+                        for (int j = 0; j < n; j += 2)
+                            a[i][j] = k++;
+                    }
+                    else
+                    {
+                        for (int j = 1; j < n; j += 2)
+                            a[i][j] = k++;
+                    }
+                }
+                for (int i = 0; i < n; i++)
+                {
+                    if (i % 2 == 1)
+                    {
+                        for (int j = 0; j < n; j += 2)
+                            a[i][j] = k++;
+                    }
+                    else
+                    {
+                        for (int j = 1; j < n; j += 2)
+                            a[i][j] = k++;
+                    }
+                }
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    cout << a[i][j] << " ";
+                }
+                cout << "\n";
+            }
         }
     }
 }

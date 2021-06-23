@@ -10,7 +10,7 @@
  *        ######     #######   ##     ##   #######   ##    ##      ##      ##     ##
 
 */
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define ll long long
@@ -31,8 +31,8 @@ using namespace std;
 #define ub upper_bound
 #define sz(x) (int)x.size()
 #define endl '\n'
-#define Y    cout << "YES\n"
-#define No    cout << "NO\n"
+#define Y cout << "YES\n"
+#define No cout << "NO\n"
 
 #define F(i, s, e) for (ll i = s; i < e; ++i)
 #define rep(i, a, b) for (int i = a; i < b; i++)
@@ -49,9 +49,44 @@ using namespace std;
 #define NINF numeric_limits<ll>::min();
 const int N = int(1e5 + 3);
 
+const ll maxi = 1100000000000000000;
+
 int main()
 {
     fast;
 
+    int n, q;
+    cin >> n >> q;
 
+    vector<ll> v(n, 0);
+
+    for (int i = 0; i < n; i++)
+        cin >> v[i];
+
+    sort(v.begin(), v.end());
+
+    for (int i = 0; i < q; ++i)
+    {
+        ll k;
+        cin >> k;
+
+        ll l = 0;
+        ll r = maxi;
+
+        while (r - l > 1)
+        {
+            ll m = (l + r) / 2;
+            ll x = upper_bound(v.begin(), v.end(), m) - v.begin();
+            
+            if (m - x >= k)
+            {
+                r = m;
+            }
+            else
+            {
+                l = m;
+            }
+        }
+        cout << l + 1 << endl;
+    }
 }

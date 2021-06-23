@@ -10,7 +10,7 @@
  *        ######     #######   ##     ##   #######   ##    ##      ##      ##     ##
 
 */
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define ll long long
@@ -52,6 +52,30 @@ const int N = int(1e5 + 3);
 int main()
 {
     fast;
+
+    int t;
+    cin >> t ;
+
+    while(t--)
+    {
+        int a , b ,c , d , k;
+        cin >> a >>b >> c>>d >> k;
+
+        int dis = abs(a - c) + abs( b - d) ;
+        // cout << dis << endl;
+
+        if( dis == k) Y;
+        else if( k < dis) No;
+        else
+        {
+            int check = k - dis ;
+
+            if( check%2 == 0) Y;
+            else No;
+
+        }
+
+    }
 
 
 }

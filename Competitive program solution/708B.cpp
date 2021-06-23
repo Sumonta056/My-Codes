@@ -52,6 +52,30 @@ const int N = int(1e5 + 3);
 int main()
 {
     fast;
+    int n;
+    cin >> n ;
 
+    int arr[n];
+
+    for(int i = 0 ; i < n ; i++)
+    {
+        cin >> arr[i];
+    }
+
+    sort(arr, arr+n);
+
+    int q ;
+    cin >> q ;
+
+    for(int i = 0 ; i < q ; i++)
+    {
+        ll x ;
+        cin >> x ;
+
+        int ans = 0 ;
+        ans = upper_bound(arr, arr+n , x) - arr ;
+
+        cout << ans << endl;
+    }
 
 }

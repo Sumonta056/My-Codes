@@ -10,7 +10,7 @@
  *        ######     #######   ##     ##   #######   ##    ##      ##      ##     ##
 
 */
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define ll long long
@@ -31,8 +31,8 @@ using namespace std;
 #define ub upper_bound
 #define sz(x) (int)x.size()
 #define endl '\n'
-#define Y    cout << "YES\n"
-#define No    cout << "NO\n"
+#define Y cout << "YES\n"
+#define No cout << "NO\n"
 
 #define F(i, s, e) for (ll i = s; i < e; ++i)
 #define rep(i, a, b) for (int i = a; i < b; i++)
@@ -53,5 +53,43 @@ int main()
 {
     fast;
 
+    int n;
+    cin >> n;
 
+    int arr[n];
+    int left[n];
+    int right[n];
+    int val = 1;
+
+    std::fill_n (left, n, 1);
+    std::fill_n (right, n, 1);
+
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+
+    for (int i = 1; i < n; i++)
+    {
+        if (arr[i] > arr[i - 1])
+        {
+            left[i] = left[i - 1] + 1;
+        }
+    }
+
+    for (int i = n - 2; i >= 0; i--)
+    {
+        if (arr[i] > arr[i + 1])
+        {
+            right[i] = right[i + 1] + 1;
+        }
+    }
+
+    ll ans = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        ans += max(right[i], left[i]);
+    }
+    cout << ans << endl;
 }

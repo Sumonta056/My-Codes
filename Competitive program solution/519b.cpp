@@ -52,6 +52,39 @@ const int N = int(1e5 + 3);
 int main()
 {
     fast;
+    int n ;
+    cin >> n ;
+
+    int a = 0 ;
+    int x = 0 ;
+    int b = 0 ; 
+    int c = 0 ;
+
+    for(int i = 0 ; i < n ; i++)
+    {
+        cin >> x ;
+
+        a = a + x ;
+    }
+
+    for(int i = 0 ; i < n-1 ; i++)
+    {
+        cin >> x ;
+
+        b = b + x ;
+    }
+
+    for(int i = 0 ; i < n-2 ; i++)
+    {
+        cin >> x ;
+
+        c = c + x ;
+    }
+
+    cout  << a - b << endl;
+    cout << b - c << endl;
+
+    
 
 
 }

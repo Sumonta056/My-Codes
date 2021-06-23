@@ -10,7 +10,7 @@
  *        ######     #######   ##     ##   #######   ##    ##      ##      ##     ##
 
 */
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define ll long long
@@ -31,8 +31,8 @@ using namespace std;
 #define ub upper_bound
 #define sz(x) (int)x.size()
 #define endl '\n'
-#define Y    cout << "YES\n"
-#define No    cout << "NO\n"
+#define Y cout << "YES\n"
+#define No cout << "NO\n"
 
 #define F(i, s, e) for (ll i = s; i < e; ++i)
 #define rep(i, a, b) for (int i = a; i < b; i++)
@@ -49,9 +49,33 @@ using namespace std;
 #define NINF numeric_limits<ll>::min();
 const int N = int(1e5 + 3);
 
+ll power(ll base, ll powr)
+{
+    ll res = 1;
+    while (powr)
+    {
+        if (powr % 2 == 0)
+            base *= base, powr /= 2;
+        else
+            res *= base, powr--;
+    }
+    return res;
+}
+
 int main()
 {
     fast;
 
+    ll a, b, c;
+    cin >> a >> b >> c;
 
+    if (c % 2 == 0)
+        a = abs(a), b = abs(b);
+
+    if (a < b)
+        cout << "<" << endl;
+    else if (a > b)
+        cout << ">" << endl;
+    else
+        cout << "=" << endl;
 }

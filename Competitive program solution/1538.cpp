@@ -53,5 +53,50 @@ int main()
 {
     fast;
 
+    int t ;
+    cin >> t;
+
+    while(t--)
+    {
+        int n;
+        cin >> n ;
+
+        int x;
+        
+        int maximum = 0 ;
+        int maxindex = 0 ;
+        int miniindex = 0;
+        int minimum = 100000;
+
+        for(int i = 0 ; i < n ; i++)
+        {
+            cin >> x ;
+            
+            if( x > maximum) 
+            {
+                maxindex = i ;
+                maximum= x ;
+            }
+
+            if( x < minimum) 
+            {
+                miniindex= i ;
+                minimum = x ;
+            }
+            
+            
+        }
+
+        int ans1 =  1 + max(maxindex,miniindex);
+        int ans2 =  n - min(maxindex,miniindex);
+        int ans3 = min(maxindex,miniindex) + 1  + (n -  max(maxindex,miniindex));
+        
+
+        int ans = min( min(ans1 ,ans2) ,ans3);
+
+        //cout<<mid<<endl;
+        cout << ans << endl;
+    }
+
 
 }

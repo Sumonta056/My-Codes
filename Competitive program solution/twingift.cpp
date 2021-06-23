@@ -10,7 +10,7 @@
  *        ######     #######   ##     ##   #######   ##    ##      ##      ##     ##
 
 */
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define ll long long
@@ -52,6 +52,49 @@ const int N = int(1e5 + 3);
 int main()
 {
     fast;
+    int t;
+    cin >> t ;
+
+    while(t--)
+    {
+        ll n, k ;
+        cin >> n >> k;
+
+        ll arr[n];
+        
+        for( ll i = 0 ; i < n ; i++)  cin >> arr[i];
+
+        sort(arr ,arr+n);
+        reverse(arr , arr+n);
+
+        ll p1 = 0 , p2 = 0 ;
+
+        ll j  = 0 ;
+
+        for( ll i = 1 ; i <= k ; i++)
+        {
+            p1 = p1 + arr[j];
+            j = j+2;
+        }
+
+        j = 1 ;
+
+        for( ll i = 1 ; i <= k ; i++)
+        {
+            p2 = p2 + arr[j];
+            j = j+2;
+        }
+
+        
+        p2 = p2 + arr[j-1];
+
+        ll ans = 0 ;
+        ans = max(p1,p2);
+
+        cout << ans << endl;
+
+
+    }
 
 
 }

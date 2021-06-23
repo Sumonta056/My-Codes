@@ -10,7 +10,7 @@
  *        ######     #######   ##     ##   #######   ##    ##      ##      ##     ##
 
 */
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define ll long long
@@ -52,6 +52,17 @@ const int N = int(1e5 + 3);
 int main()
 {
     fast;
+
+    int t ;
+    cin >> t ;
+
+    while(t--)
+    {
+        int x , y , a , b ;
+        cin >> x >> y >> a >> b;
+
+        cout << a/x + b/y <<endl;
+    }
 
 
 }

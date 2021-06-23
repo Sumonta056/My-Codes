@@ -52,6 +52,20 @@ const int N = int(1e5 + 3);
 int main()
 {
     fast;
+    int t ;
+    cin >> t ;
+
+    while(t--)
+    {
+        int a,b,x,y;
+        cin >> a >> b >>x>>y;
+
+        int c = 2*x - a;
+        int d = 2*y - b;
+
+        cout<<c<<" "<<d<<endl;
+
+    }
 
 
 }

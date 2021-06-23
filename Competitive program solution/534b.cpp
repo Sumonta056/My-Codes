@@ -53,5 +53,35 @@ int main()
 {
     fast;
 
+    int mt = 2;
+
+    int v1 , v2 ;
+    cin >> v1 >> v2 ;
+
+    int t , d ;
+    cin >> t >> d ;
+
+    int ans = 0 ;
+
+    ans = v1 + v2 ;
+
+
+    for (int i = 1 ; i <= t-mt ; i++)
+    {
+        int v1dis = v1 + i * d ;
+        int v2dis = v2 + ( t-i-1) * d ;
+        //cout<< v1dis << v2dis <<endl
+
+
+        ans = ans + min(v1dis , v2dis);
+    }
+
+    cout << ans << endl;
+
+
+
+
+
+
 
 }

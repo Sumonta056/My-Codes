@@ -53,5 +53,15 @@ int main()
 {
     fast;
 
+    float a , b ;
+    cin >> a >> b;
+
+    float ans = 0 ;
+    
+
+    ans = a * ( b / 100) ;
+
+    cout << ans << endl;
+
 
 }

@@ -10,7 +10,7 @@
  *        ######     #######   ##     ##   #######   ##    ##      ##      ##     ##
 
 */
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define ll long long
@@ -52,6 +52,26 @@ const int N = int(1e5 + 3);
 int main()
 {
     fast;
+    int t;
+    cin >> t ;
+
+    while(t--)
+    {
+        ll n ;
+        cin >> n ;
+
+        ll count = 0 ;
+
+        for( ll i = 1 ; i <= n ; i = i*10 +1)
+        {
+            for(ll j = 1 ; j < 10 ; j++)
+            {
+                if( i*j <= n) count++;
+            }
+        }
+
+        cout << count << endl;
+    }
 
 
 }
