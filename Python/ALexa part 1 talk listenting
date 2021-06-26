@@ -1,0 +1,27 @@
+# importing the packages
+
+import speech_recognition as sr                         # setting speech recognition as sr value
+import pyttsx3
+
+listener = sr.Recognizer()                              # declaring variables
+alexa = pyttsx3.init()
+
+
+voices = alexa.getProperty('voices')                    # changing the voice of alexa male to female
+alexa.setProperty('voice' , voices[1].id)
+
+
+alexa.say('Hi Sumonto ! How can i help you?')           # alexa talking
+alexa.runAndWait()
+
+try:                                                    # alexa listening your voice
+   with sr.Microphone() as source:
+       print('listening..')
+       voice = listener.listen(source)
+       command = listener.recognize_google(voice)
+       if 'Alexa' in command:                          # print your voice only if you say alexa first
+           print(command)
+
+
+except:
+    pass
