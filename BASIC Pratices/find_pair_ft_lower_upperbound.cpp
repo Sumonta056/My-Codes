@@ -10,7 +10,7 @@
  *        ######     #######   ##     ##   #######   ##    ##      ##      ##     ##
 
 */
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define ll long long
@@ -31,8 +31,8 @@ using namespace std;
 #define ub upper_bound
 #define sz(x) (int)x.size()
 #define endl '\n'
-#define Y    cout << "YES\n"
-#define No    cout << "NO\n"
+#define Y cout << "YES\n"
+#define No cout << "NO\n"
 
 #define F(i, s, e) for (ll i = s; i < e; ++i)
 #define rep(i, a, b) for (int i = a; i < b; i++)
@@ -51,7 +51,29 @@ const int N = int(1e5 + 3);
 
 int main()
 {
-    fast; 
+    fast;
+    ll t, n, l, r;
 
+    cin >> t;
+    while (t--)
+    {
+        cin >> n >> l >> r;
+        vector<ll> vec(n);
+        vector<ll>::iterator it, it1;
 
+        for (ll i = 0; i < n; i++)
+            cin >> vec[i];
+
+        sort(vec.begin(), vec.end());
+        ll cnt = 0;
+        for (ll i = 0; i < n - 1; i++)
+        {
+            it = lower_bound(vec.begin() + i + 1, vec.end(), l - vec[i]);
+            it1 = upper_bound(vec.begin() + i + 1, vec.end(), r - vec[i]);
+
+            cnt += (it1 - it);
+        }
+
+        cout << cnt << endl;
+    }
 }

@@ -51,7 +51,25 @@ const int N = int(1e5 + 3);
 
 int main()
 {
-    fast; 
+    fast;
+
+    int a=0, b=0 , c=0 , d=0 ;
+
+    for ( int i = 0 ; i < 4 ; i++)
+    {
+        string s ;
+        cin >> s ;
+
+        if(s == "H") a++;
+        else if (s == "2B") b++;
+        else if (s == "3B") c++;
+        else d++;
+    }
+
+    if ( a == 1 &&  b == 1  && c == 1 && d == 1) Y;
+    else No;
+    
+    
 
 
 }

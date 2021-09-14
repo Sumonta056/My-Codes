@@ -10,7 +10,7 @@
  *        ######     #######   ##     ##   #######   ##    ##      ##      ##     ##
 
 */
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define ll long long
@@ -31,8 +31,8 @@ using namespace std;
 #define ub upper_bound
 #define sz(x) (int)x.size()
 #define endl '\n'
-#define Y    cout << "YES\n"
-#define No    cout << "NO\n"
+#define Y cout << "YES\n"
+#define No cout << "NO\n"
 
 #define F(i, s, e) for (ll i = s; i < e; ++i)
 #define rep(i, a, b) for (int i = a; i < b; i++)
@@ -51,7 +51,38 @@ const int N = int(1e5 + 3);
 
 int main()
 {
-    fast; 
+    fast;
 
+    int t;
+    cin >> t;
 
+    while (t--)
+    {
+        int n;
+        cin >> n;
+
+        int arr[n];
+
+        ll sum = 0;
+        int count = 0;
+
+        for (int i = 0; i < n; i++)
+        {
+            cin >> arr[i];
+
+            sum = sum + arr[i];
+        }
+
+        if (sum % n != 0)
+            cout << -1 << endl;
+        else
+        {
+            for (int i = 0; i < n; i++)
+            {
+                if( arr[i] > (sum/n)) count++ ;
+            }
+
+            cout << count << endl;
+        }
+    }
 }
