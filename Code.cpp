@@ -49,6 +49,9 @@ using namespace std;
 #define NINF numeric_limits<ll>::min();
 const int N = int(1e5 + 3);
 
+//* char a = 'A';   int num = (int) a;
+//* char a = '2';   int num = a-48;
+
 int main()
 {
     fast; 
