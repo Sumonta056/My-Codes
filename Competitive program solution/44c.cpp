@@ -49,8 +49,8 @@ using namespace std;
         cout << i << " "; \
     cout << endl;
 
-#define max3(a,b,c) max(max((a),(b)),(c))
-#define min3(a,b,c) min(min((a),(b)),(c))
+#define max3(a, b, c) max(max((a), (b)), (c))
+#define min3(a, b, c) min(min((a), (b)), (c))
 
 #define cin(n) cin >> n
 #define cin2(a, b) cin >> a >> b;
@@ -82,11 +82,46 @@ const int N = int(1e5 + 3);
 //* char a = 'A';   int num = (int) a;
 //* char a = '2';   int num = a-48;
 
-ll mod_mul(ll a, ll b) {a = a % mod; b = b % mod; return (((a * b) % mod) + mod) % mod;}
-ll mod_add(ll a, ll b) {a = a % mod; b = b % mod; return (((a + b) % mod) + mod) % mod;}
+ll mod_mul(ll a, ll b)
+{
+    a = a % mod;
+    b = b % mod;
+    return (((a * b) % mod) + mod) % mod;
+}
+ll mod_add(ll a, ll b)
+{
+    a = a % mod;
+    b = b % mod;
+    return (((a + b) % mod) + mod) % mod;
+}
 
 int main()
 {
     fast;
-    
+
+    string s;
+    cin >> s;
+
+    int n = s.length();
+    int count = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (s[i] == 'Q')
+        {
+            for (int j = i + 1; j < n; j++)
+            {
+                if (s[j] == 'A')
+                {
+                    for (int k = j + 1; k < n; k++)
+                    {
+                        if (s[k] == 'Q')
+                            count++;
+                    }
+                }
+            }
+        }
+    }
+
+    cout << count << endl;
 }

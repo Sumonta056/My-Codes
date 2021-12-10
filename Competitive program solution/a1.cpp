@@ -88,5 +88,36 @@ ll mod_add(ll a, ll b) {a = a % mod; b = b % mod; return (((a + b) % mod) + mod)
 int main()
 {
     fast;
+    int t;
+    cin >> t;
+    
+    while(t--)
+    {
+        int n ;
+        cin >> n ;
+
+        string s ;
+        cin >> s ;
+
+        string check = s;
+
+        for( int i = 0 ; i<n ; i++)
+        {
+            if(s[i] == '1')
+            {
+                if(i+1<n) check[i+1] = '1' ;
+                if(i-1>=0)check[i-1] = '1' ;
+            }
+        }
+        ll ans = 0 ;
+        for( int i = 0 ; i< n ; i++)
+        {
+            if(check[i] == '0') ans++ ;
+        }
+
+        cout << ans <<endl;
+       // cout << check <<endl;
+        
+    }
     
 }

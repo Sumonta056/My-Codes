@@ -88,5 +88,25 @@ ll mod_add(ll a, ll b) {a = a % mod; b = b % mod; return (((a + b) % mod) + mod)
 int main()
 {
     fast;
+    int t;
+    cin >> t;
+    
+    while(t--)
+    {
+        string s ;
+        cin >> s ;
+
+        string word ;
+        cin >> word ;
+
+        int ans = 0 ;
+
+        int first = 
+
+        for( int i = 1 ; i < word.length() ; i++)
+        {
+            int 
+        }
+    }
     
 }

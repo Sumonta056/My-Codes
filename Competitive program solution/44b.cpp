@@ -49,8 +49,8 @@ using namespace std;
         cout << i << " "; \
     cout << endl;
 
-#define max3(a,b,c) max(max((a),(b)),(c))
-#define min3(a,b,c) min(min((a),(b)),(c))
+#define max3(a, b, c) max(max((a), (b)), (c))
+#define min3(a, b, c) min(min((a), (b)), (c))
 
 #define cin(n) cin >> n
 #define cin2(a, b) cin >> a >> b;
@@ -82,11 +82,59 @@ const int N = int(1e5 + 3);
 //* char a = 'A';   int num = (int) a;
 //* char a = '2';   int num = a-48;
 
-ll mod_mul(ll a, ll b) {a = a % mod; b = b % mod; return (((a * b) % mod) + mod) % mod;}
-ll mod_add(ll a, ll b) {a = a % mod; b = b % mod; return (((a + b) % mod) + mod) % mod;}
+ll mod_mul(ll a, ll b)
+{
+    a = a % mod;
+    b = b % mod;
+    return (((a * b) % mod) + mod) % mod;
+}
+ll mod_add(ll a, ll b)
+{
+    a = a % mod;
+    b = b % mod;
+    return (((a + b) % mod) + mod) % mod;
+}
 
 int main()
 {
     fast;
-    
+    int t;
+    cin >> t;
+
+    while (t--)
+    {
+        int n, k;
+        cin >> n >> k;
+
+        int a[n];
+        int b[n];
+
+        for (int i = 0; i < n; i++)
+            cin >> a[i];
+        for (int i = 0; i < n; i++)
+            cin >> b[i];
+
+        sort(a, a + n);
+        sort(b, b + n);
+
+        int j = n - 1;
+        for (int i = 0; i < k; i++)
+        {
+            if (a[i] < b[j])
+            {
+                a[i] = b[j];
+                j--;
+            }
+
+            else
+                break;
+        }
+
+        ll sum = 0;
+
+        for (int i = 0; i < n; i++)
+            sum = sum + a[i];
+
+        cout << sum << endl;
+    }
 }

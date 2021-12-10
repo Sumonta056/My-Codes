@@ -33,11 +33,11 @@ using namespace std;
 #define stll stack<ll>
 #define Mi map<int, int>
 #define mii map<pii, int>
-#define alls(a) (a).begin(), (a).end()
+#define all(a) (a).begin(), (a).end()
 #define sz(x) (int)x.size()
 
 #define size(s) s.length()
-#define all(v) (v.begin, v.end)
+#define alls(v) (v.begin, v.end)
 #define rev(v) reverse(v.begin, v.end)
 #define srt(v) sort(v.begin, v.end)
 
@@ -49,9 +49,6 @@ using namespace std;
         cout << i << " "; \
     cout << endl;
 
-#define max3(a,b,c) max(max((a),(b)),(c))
-#define min3(a,b,c) min(min((a),(b)),(c))
-
 #define cin(n) cin >> n
 #define cin2(a, b) cin >> a >> b;
 #define cin3(a, b, c) cin >> a >> b >> c;
@@ -60,7 +57,7 @@ using namespace std;
 #define endl '\n'
 #define Y cout << "YES\n"
 #define No cout << "NO\n"
-#define ye cout << "Yes\n"
+
 #define no cout << "No\n"
 
 #define sp " "
@@ -72,21 +69,71 @@ using namespace std;
     cout.tie(NULL)
 
 #define mod 1000000007
-#define inf 1000000000000000005
 #define INF numeric_limits<ll>::max();
 #define NINF numeric_limits<ll>::min();
-const int N = int(1e5 + 3);
-
-#define fo(i, a, b) for (int i = a; i <= b; i++)
 
 //* char a = 'A';   int num = (int) a;
 //* char a = '2';   int num = a-48;
 
-ll mod_mul(ll a, ll b) {a = a % mod; b = b % mod; return (((a * b) % mod) + mod) % mod;}
-ll mod_add(ll a, ll b) {a = a % mod; b = b % mod; return (((a + b) % mod) + mod) % mod;}
+ll const N = int(1e7 + 3);
+ll is_prime[N] = {0};
+
+void sieve()
+{
+    is_prime[1] = 1;
+    for (ll i = 2; i <= N; i++)
+    {
+        for (int j = 2; i * j <= N; j++)
+        {
+            is_prime[j * i] = 1;
+        }
+    }
+}
+
+ll prime_in_range[N];
+
+
+void count_prime()
+{
+    prime_in_range[0] = 0;
+    prime_in_range[1] = 0;
+    prime_in_range[2] = 1;
+
+    for (int i = 3; i <= N; i++)
+    {
+        if (is_prime[i] == 0) 
+        {
+            prime_in_range[i] = prime_in_range[i - 1] + 1;
+        }
+        else
+        {
+            prime_in_range[i] = prime_in_range[i - 1];
+        }
+    }
+}
 
 int main()
 {
     fast;
-    
+    ll t;
+    cin >> t;
+
+    sieve();
+    count_prime();
+
+    while (t--)
+    {
+        ll x, y;
+        cin >> x >> y;
+
+        ll step = 0;
+
+        step = y - x - (prime_in_range[y] - prime_in_range[x+1]) ;
+
+        // cout << prime_in_range[y] <<endl ;
+        // cout << prime_in_range[x+1] <<endl ;
+        
+
+        cout << step << endl;
+    }
 }

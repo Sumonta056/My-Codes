@@ -33,11 +33,11 @@ using namespace std;
 #define stll stack<ll>
 #define Mi map<int, int>
 #define mii map<pii, int>
-#define alls(a) (a).begin(), (a).end()
+#define all(a) (a).begin(), (a).end()
 #define sz(x) (int)x.size()
 
 #define size(s) s.length()
-#define all(v) (v.begin, v.end)
+#define alls(v) (v.begin, v.end)
 #define rev(v) reverse(v.begin, v.end)
 #define srt(v) sort(v.begin, v.end)
 
@@ -49,9 +49,6 @@ using namespace std;
         cout << i << " "; \
     cout << endl;
 
-#define max3(a,b,c) max(max((a),(b)),(c))
-#define min3(a,b,c) min(min((a),(b)),(c))
-
 #define cin(n) cin >> n
 #define cin2(a, b) cin >> a >> b;
 #define cin3(a, b, c) cin >> a >> b >> c;
@@ -60,7 +57,7 @@ using namespace std;
 #define endl '\n'
 #define Y cout << "YES\n"
 #define No cout << "NO\n"
-#define ye cout << "Yes\n"
+#define y cout << "Yes\n"
 #define no cout << "No\n"
 
 #define sp " "
@@ -72,21 +69,42 @@ using namespace std;
     cout.tie(NULL)
 
 #define mod 1000000007
-#define inf 1000000000000000005
 #define INF numeric_limits<ll>::max();
 #define NINF numeric_limits<ll>::min();
 const int N = int(1e5 + 3);
 
-#define fo(i, a, b) for (int i = a; i <= b; i++)
-
 //* char a = 'A';   int num = (int) a;
 //* char a = '2';   int num = a-48;
-
-ll mod_mul(ll a, ll b) {a = a % mod; b = b % mod; return (((a * b) % mod) + mod) % mod;}
-ll mod_add(ll a, ll b) {a = a % mod; b = b % mod; return (((a + b) % mod) + mod) % mod;}
 
 int main()
 {
     fast;
-    
+    int t;
+    cin >> t;
+
+    while (t--)
+    {
+        int n ;
+        cin >> n;
+        string s;
+        cin >> s;
+
+        //int n = s.length();
+
+        bool check = false;
+
+        for (int i = 0; i < n - 1; i++)
+        {
+            if ((s[i] == 'L' && s[i + 1] == 'L') || (s[i] == 'R' && s[i + 1] == 'R'))
+            {
+                check = true;
+                break;
+            }
+        }
+
+        if (check)
+            Y;
+        else
+            No;
+    }
 }
