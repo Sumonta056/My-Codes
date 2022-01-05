@@ -36,7 +36,7 @@ using namespace std;
 #define alls(a) (a).begin(), (a).end()
 #define sz(x) (int)x.size()
 
-#define size(s) s.length()
+#define Size(s) s.length()
 #define all(v) (v.begin, v.end)
 #define rev(v) reverse(v.begin, v.end)
 #define srt(v) sort(v.begin, v.end)
@@ -77,7 +77,10 @@ using namespace std;
 #define NINF numeric_limits<ll>::min();
 const int N = int(1e5 + 3);
 
-#define fo(i, a, b) for (int i = a; i <= b; i++)
+#define foi(i, a, b) for (int i = a; i < b; i++)
+#define foI(i, a, b) for (int i = a; i <= b; i++)
+#define fol(i, a, b) for (ll i = a; i < b; i++)
+#define foL(i, a, b) for (ll i = a; i <= b; i++)
 
 //* char a = 'A';   int num = (int) a;
 //* char a = '2';   int num = a-48;
