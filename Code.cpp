@@ -84,6 +84,7 @@ const int N = int(1e5 + 3);
 
 //* char a = 'A';   int num = (int) a;
 //* char a = '2';   int num = a-48;
+//* char a = '8';   int num = a - '0' ;  (  s[i]-'0' == 8 )
 
 ll mod_mul(ll a, ll b) {a = a % mod; b = b % mod; return (((a * b) % mod) + mod) % mod;}
 ll mod_add(ll a, ll b) {a = a % mod; b = b % mod; return (((a + b) % mod) + mod) % mod;}
