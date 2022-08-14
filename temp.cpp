@@ -75,7 +75,7 @@ using namespace std;
 #define inf 1000000000000000005
 #define INF numeric_limits<ll>::max();
 #define NINF numeric_limits<ll>::min();
-const int E = int(1e5 + 3);
+const int N = int(1e5 + 3);
 
 #define foi(i, a, b) for (int i = a; i < b; i++)
 #define foI(i, a, b) for (int i = a; i <= b; i++)
@@ -89,6 +89,24 @@ const int E = int(1e5 + 3);
 ll mod_mul(ll a, ll b) {a = a % mod; b = b % mod; return (((a * b) % mod) + mod) % mod;}
 ll mod_add(ll a, ll b) {a = a % mod; b = b % mod; return (((a + b) % mod) + mod) % mod;}
 
+// * updated sort
+vector < vector<int>> v ;
+bool cmp( vector<int> a , vector<int> b)
+{
+    return a > b ;
+}
+
+// * long values power
+ll power(ll base, ll powr)
+{
+  ll res = 1;
+  while(powr)
+  {
+    if(powr%2==0) base*=base,powr/=2;
+    else res*=base,powr--;    
+  }
+  return res;
+}
 
 
 int main()
@@ -96,3 +114,49 @@ int main()
     fast;
     
 }
+/*
+
+! prime numbers
+bool is_prime(int X)
+{
+	for(int i = 2; i*i < X; i++)
+    {
+		if(X % i == 0)
+        {
+			return false;
+		}
+	}
+	return true;
+}
+
+! GCD 
+int gcd(int a, int b)
+{
+	if(b == 0)
+    {
+		return a;
+	}
+	else
+    {
+		return gcd(b, a % b);
+	}
+}
+
+!Divisor
+vector<int> v;
+        for (int i = 1; i <= sqrt(n); i++)
+        {
+            if (n % i == 0)
+            {
+                if (n / i == i)
+                    v.push_back(i);
+                else
+                {
+                    v.push_back(i);
+                    v.push_back(n / i);
+                }
+            }
+        } 
+
+
+*/
